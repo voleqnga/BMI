@@ -8,6 +8,7 @@ class MainWindowEx(Ui_MainWindow):
         super().setupUi(MainWindow)
         self.MainWindow=MainWindow
         self.pushButtonCalculate.clicked.connect(self.calculateBMI)
+        self.pushButtonClose.clicked.connect(self.MainWindow.close)
     def calculateBMI(self):
         weight=float(self.lineEditweight.text())
         height=float(self.lineEditheight.text())
