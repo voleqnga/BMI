@@ -1,4 +1,4 @@
-from MainWindow import Ui_MainWindow
+from MainWindowBMI import Ui_MainWindow
 
 
 class MainWindowEx(Ui_MainWindow):
@@ -9,8 +9,8 @@ class MainWindowEx(Ui_MainWindow):
         self.MainWindow=MainWindow
         self.pushButtonCalculate.clicked.connect(self.calculateBMI)
     def calculateBMI(self):
-        weight=float(self.lineEditWeight.text())
-        height=float(self.lineEditHeight.text())
+        weight=float(self.lineEditweight.text())
+        height=float(self.lineEditheight.text())
         height=height/100
         BMI=weight/(height*height)
         BMI=round(BMI,2)
@@ -31,7 +31,7 @@ class MainWindowEx(Ui_MainWindow):
             comment="Obese Class II"
         else:
             comment = "Obese Class III"
-        self.labelBMI.setText(str(BMI))
-        self.labelComment.setText(comment)
+        self.lineEditBMI.setText(str(BMI))
+        self.lineEditComment.setText(comment)
     def show(self):
         self.MainWindow.show()
